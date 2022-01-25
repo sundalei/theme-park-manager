@@ -2,6 +2,11 @@ plugins {
     id 'java-library'
 }
 
+tasks.register('copyHtml', Copy) {
+    from layout.projectDirectory.file('src/main/resources/static/index.html')
+    into layout.buildDirectory
+}
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(16)
